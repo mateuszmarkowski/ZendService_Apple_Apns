@@ -132,7 +132,7 @@ class Message
         if (preg_match('/[^0-9a-f]/i', $token)) {
             throw new Exception\InvalidArgumentException(sprintf(
                     'Device token must be mask "%s". Token given: "%s"',
-                    '/[^0-9a-f]/',
+                    '/[^0-9a-f]/i',
                     $token
             ));
         }
