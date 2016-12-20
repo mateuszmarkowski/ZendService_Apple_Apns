@@ -129,18 +129,11 @@ class Message
             ));
         }
 
-        if (preg_match('/[^0-9a-f]/', $token)) {
+        if (preg_match('/[^0-9a-f]/i', $token)) {
             throw new Exception\InvalidArgumentException(sprintf(
                     'Device token must be mask "%s". Token given: "%s"',
                     '/[^0-9a-f]/',
                     $token
-            ));
-        }
-
-        if (strlen($token) != 64) {
-            throw new Exception\InvalidArgumentException(sprintf(
-                    'Device token must be a 64 charsets, Token length given: %d.',
-                    mb_strlen($token)
             ));
         }
 
